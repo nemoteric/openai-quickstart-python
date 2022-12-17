@@ -3,13 +3,13 @@
     <title>OpenAI Quickstart</title>
     <link
             rel="shortcut icon"
-            href="{{ url_for('static', filename='dog.png') }}"
+            href="{{ url_for('static', filename='plane.webp') }}"
     />
     <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}"/>
 </head>
 
 <body>
-<img src="{{ url_for('static', filename='dog.png') }}" class="icon"/>
+<img src="{{ url_for('static', filename='plane.webp') }}" class="icon"/>
 <h3>Get Airline Codes</h3>
   <form action="/" method="post">
     <input type="text" name="ond" placeholder="Enter the cities of the codes you want." required />
@@ -17,5 +17,11 @@
 </form>
 {% if result %}
     <div class="result">{{ result }}</div>
+{% endif %}
+{% if o_url %}
+    <div class="result"><img src="{{ o_url }}"/></div>
+{% endif %}
+{% if d_url %}
+    <div class="result"><img src="{{ d_url }}"/></div>
 {% endif %}
 </body>
